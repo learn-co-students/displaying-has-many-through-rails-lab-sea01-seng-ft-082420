@@ -1,0 +1,3 @@
+<h1> <%=link_to @appointment.patient.name, @appointment.patient %>'s appointment </h1>
+<h3>With: <%=link_to @appointment.doctor.name,  @appointment.doctor%></h3>
+<h3><%=@appointment.appointment_datetime.to_formatted_s(:long).split.insert(3,"at").join(" ")%></h3>

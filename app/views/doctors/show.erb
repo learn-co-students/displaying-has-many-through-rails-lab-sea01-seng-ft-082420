@@ -1,0 +1,9 @@
+<h1> <%= @doctor.name %> </h1>
+<p>Department: <%=@doctor.department%> </p>
+</br>
+<h3><% @doctor.appointments.each do |a| %></h3>
+    <p>Time of Appointment: <%= a.appointment_datetime.to_formatted_s(:long).split.insert(3,"at").join(" ") %></p>
+    <div>
+    <p>With: <%=link_to a.patient.name, a.patient %> </p>
+    </br>
+    <% end %>
